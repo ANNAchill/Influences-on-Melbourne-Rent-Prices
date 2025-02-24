@@ -51,6 +51,21 @@ This study employs a range of data analysis techniques, including spatial econom
 ### Crime Analysis
 - **Correlation**: Crime rates show a weak positive correlation with rental prices, especially in high-density areas, which tend to have higher rents and crime rates.
 
+## Conclusion
+
+This study provides a detailed understanding of how proximity to landmarks, land use types, and crime rates influence rental prices in Melbourne. The insights can guide urban planners, real estate professionals, and policymakers in shaping the future of urban development and housing policies in the city.
+
+## Further Research
+
+- **Impact of High Crime Areas on Rent**: Further research could focus on understanding the nuances of crime's impact on rent, especially in peripheral or lower-density areas.
+- **Land Use Changes**: Investigating the future trends of land use changes and their potential effects on rental prices could provide valuable insights for long-term urban planning.
+
+## License
+
+This project is for educational and research purposes only. It is **not intended for commercial use**. 
+
+Please feel free to use and modify the code for personal learning and non-commercial applications.
+
 ## Code Example
 ```python
 import geopandas as gpd
@@ -67,17 +82,4 @@ university_counts = university_joined.groupby(university_joined['index']).size()
 # Correlation between university count and median rent
 correlation_uni = census_polygons['Median_rent_weekly'].corr(census_polygons['university_count'])
 print(f"Correlation between university count and median weekly rent: {correlation_uni}")
-
-## Visualizations
-The following maps show how different landmarks (universities, hospitals, stations) relate to rental prices across Melbourne:
-
-University Map: Distribution of universities and their relationship with rent levels.
-Hospital Map: Impact of hospital locations on rental prices.
-Station Map: How proximity to stations affects rent in Melbourne.
-
-# Choropleth Map Example
-```python
-fig, ax = plt.subplots(figsize=(12, 12))
-census_polygons.plot(column='Median_rent_weekly', ax=ax, legend=True, cmap='YlGnBu')
-plt.show()
 
