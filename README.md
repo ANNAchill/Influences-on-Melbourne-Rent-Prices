@@ -67,3 +67,17 @@ university_counts = university_joined.groupby(university_joined['index']).size()
 # Correlation between university count and median rent
 correlation_uni = census_polygons['Median_rent_weekly'].corr(census_polygons['university_count'])
 print(f"Correlation between university count and median weekly rent: {correlation_uni}")
+
+## Visualizations
+The following maps show how different landmarks (universities, hospitals, stations) relate to rental prices across Melbourne:
+
+University Map: Distribution of universities and their relationship with rent levels.
+Hospital Map: Impact of hospital locations on rental prices.
+Station Map: How proximity to stations affects rent in Melbourne.
+
+# Choropleth Map Example
+```python
+fig, ax = plt.subplots(figsize=(12, 12))
+census_polygons.plot(column='Median_rent_weekly', ax=ax, legend=True, cmap='YlGnBu')
+plt.show()
+
